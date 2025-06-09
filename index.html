@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Message for Riri</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Pacifico&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://64.media.tumblr.com/2c33f4e6e264cad6fe5b2695cb30472d/66017b3acf2b1d6f-2e/s1280x1920/e8186b703772e7285e26ecc73f4cce9fccf48f11.gif') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1.2rem;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .message-box {
+      background: rgba(13, 11, 14, 0.78);
+      border-radius: 18px;
+      padding: 1.5rem 1rem;
+      width: 100%;
+      max-width: 350px;
+      color: #e7e9f4;
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 1.5rem;
+      color: #91bfff;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .signature {
+      font-style: italic;
+      color: #b4a7d6;
+    }
+
+    .chat-btn {
+      margin-top: 1rem;
+      background-color: #4259f5;
+      color: white;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .chat-btn:hover {
+      background-color: #2c3cb0;
+    }
+
+    .heart, .sparkle, .paw {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle, #000000, #1f1f1f);
+      clip-path: polygon(50% 0%, 61% 8%, 70% 20%, 75% 35%, 75% 50%, 70% 65%, 60% 80%, 50% 90%, 40% 80%, 30% 65%, 25% 50%, 25% 35%, 30% 20%, 39% 8%);
+      animation: float 4s ease-in infinite;
+    }
+
+    .heart:nth-child(odd) {
+      background: radial-gradient(circle, #4daaff, #2c2cfa);
+    }
+
+    .sparkle {
+      width: 6px;
+      height: 6px;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: sparkle-float 3s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    .paw {
+      background: url('https://em-content.zobj.net/source/twitter/376/paw-prints_1f43e.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      animation: paw-rise 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    @keyframes sparkle-float {
+      0% { transform: translateY(0); opacity: 0.8; }
+      100% { transform: translateY(-80vh); opacity: 0; }
+    }
+
+    @keyframes paw-rise {
+      0% { bottom: -20px; opacity: 1; }
+      100% { bottom: 100vh; opacity: 0; }
+    }
+
+    @media (min-width: 481px) {
+      .container, .message-box {
+        display: none;
+      }
+      body::before {
+        content: "This message is meant for mobile view only 💖📱";
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 2rem;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="message-box">
+      <h1>Hello my wabwab,</h1>
+      <p>I hope college is treating you kindly and that your friends are surrounding you with kindness and support.</p>
+      <p>I also hope you’re not getting too tired, but if you ever do, please remember to take good care of yourself and rest when you need it.</p>
+      <p>Even though we don’t chat often, and you only reply when you find a moment, I want you to know how much I care about you. I love you and will always be here whenever you need me — no matter what.</p>
+      <p>Hope we can go out like we used to, and play games like we used to. The L4D2 — we really need to finish it 🙂</p>
+      <p class="signature">Take care, and I hope we can catch up whenever you have some time 🐾</p>
+      <button class="chat-btn" onclick="window.open('https://www.messenger.com/e2ee/t/9835836679808031', '_blank')">Click this link to chat me — Kopi 💬</button>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = (Math.random() * 100) + 'vw';
+      heart.style.top = (Math.random() * 100) + 'vh';
+      heart.style.animationDelay = (Math.random() * 2) + 's';
+      container.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }
+
+    function createSparkle() {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = (Math.random() * 100) + 'vw';
+      sparkle.style.top = (Math.random() * 100) + 'vh';
+      sparkle.style.animationDelay = (Math.random() * 3) + 's';
+      container.appendChild(sparkle);
+      setTimeout(() => sparkle.remove(), 4000);
+    }
+
+    function createPaw() {
+      const paw = document.createElement('div');
+      paw.classList.add('paw');
+      paw.style.left = (Math.random() * 100) + 'vw';
+      paw.style.bottom = '-20px';
+      paw.style.animationDuration = (10 + Math.random() * 10) + 's';
+      container.appendChild(paw);
+      setTimeout(() => paw.remove(), (10 + Math.random() * 10) * 1000);
+    }
+
+    setInterval(createHeart, 600);
+    setInterval(createSparkle, 1500);
+    setInterval(createPaw, 4000);
+  </script>
+</body>
+</html>
